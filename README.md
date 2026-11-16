@@ -1,23 +1,61 @@
-# 🏦 FinTech Core - Smart Banking System
+# FinTech Core — Smart Banking System
 
-A robust console-based Banking Application built in **Java** to practically demonstrate the core pillars of Object-Oriented Programming (OOP): **Encapsulation** and **Inheritance**.
+An educational, console-based Java banking project demonstrating core Object-Oriented Programming (OOP) concepts through bank accounts.
 
----
+## Concepts demonstrated
 
-## 🛠️ OOPs Concepts Demonstrated
+- **Encapsulation:** account details are kept inside the `BankAccount` class.
+- **Inheritance:** `SavingsAccount` and `CurrentAccount` extend `BankAccount`.
+- **Polymorphism:** `CurrentAccount` overrides `withdraw()` to apply an overdraft rule.
+- **Constructors and `super`:** child account constructors initialize shared parent state.
 
-### 1. Encapsulation (Data Security)
-- Sensitive data fields like `accountNumber`, `accountHolderName`, and `balance` are secured inside the `BankAccount` class using appropriate access modifiers (`private`/`protected`).
-- Input validation logic is enforced in methods (e.g., preventing negative deposits or overdraft abuse).
+## Current features
 
-### 2. Inheritance & Polymorphism (Code Reusability)
-- **`SavingsAccount`** inherits from `BankAccount` and extends functionality by introducing an interest calculation module (`addInterest`).
-- **`CurrentAccount`** inherits from `BankAccount` and overrides the `withdraw()` method to implement a real-world **Overdraft Facility**.
+- Deposit with a positive-amount check.
+- Withdrawal with a balance check.
+- Savings interest calculation.
+- Current-account overdraft demonstration.
+- Account information display.
 
----
+## Requirements
 
-## 🚀 How to Run
+- JDK 8 or newer
+- A terminal (or any Java IDE)
 
-1. Clone the repository:
+## Run from the repository root
+
+The current source file is located at `en-In/src/Main.java`.
+
+**Windows:**
+
+```powershell
+javac -d en-In/out en-In/src/Main.java
+java -cp en-In/out Main
+```
+
+**macOS / Linux:**
+
 ```bash
-   git clone [https://github.com/bilalfarooq9201-create/fintech-core-oops.git](https://github.com/bilalfarooq9201-create/fintech-core-oops.git)
+mkdir -p en-In/out
+javac -d en-In/out en-In/src/Main.java
+java -cp en-In/out Main
+```
+
+## Current limitations
+
+- The demo currently keeps multiple classes in one source file.
+- Amounts use `int`; a real banking system should use `BigDecimal` and currency-aware rules.
+- Input is demonstrated with fixed values rather than a user-driven menu.
+- This is an OOP learning project, **not** a real banking or financial application.
+
+## Planned improvements
+
+1. Validate interest rates and overdraft limits.
+2. Add automated tests for deposits, withdrawals, interest, and overdraft boundaries.
+3. Split classes into separate files and adopt a conventional Java source layout.
+4. Add a menu-driven interface and improve error handling.
+5. Add a project-level `.gitignore` and remove generated IDE/build artifacts from version control.
+
+## License
+
+See the repository's license file.
